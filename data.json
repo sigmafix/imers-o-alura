@@ -1,0 +1,98 @@
+[
+  {
+    "nome": "Rá",
+    "descricao": "O deus do sol, uma das divindades mais importantes do Egito Antigo. Era visto como o criador de tudo e viajava pelo céu em sua barca solar.",
+    "data_criacao": "c. 2500-2400 a.C.",
+    "link": "https://pt.wikipedia.org/wiki/R%C3%A1",
+    "tags": [
+      "deus",
+      "sol",
+      "criador",
+      "mitologia"
+    ]
+  },
+  {
+    "nome": "Anúbis",
+    "descricao": "Deus dos mortos, da mumificação e do embalsamamento. Guiava as almas no além e presidia a pesagem do coração no julgamento de Osíris.",
+    "data_criacao": "Período Pré-Dinástico",
+    "link": "https://pt.wikipedia.org/wiki/An%C3%BAbis",
+    "tags": [
+      "deus",
+      "morte",
+      "mumificação",
+      "julgamento"
+    ]
+  },
+  {
+    "nome": "Ísis",
+    "descricao": "Deusa da magia, do amor, da maternidade e da fertilidade. Esposa de Osíris e mãe de Hórus, era uma das deusas mais veneradas.",
+    "data_criacao": "Antigo Império",
+    "link": "https://pt.wikipedia.org/wiki/%C3%8Dsis",
+    "tags": [
+      "deusa",
+      "magia",
+      "maternidade",
+      "proteção"
+    ]
+  },
+  {
+    "nome": "Tutancâmon",
+    "descricao": "Faraó da 18ª dinastia, famoso por sua tumba quase intacta descoberta em 1922. Seu reinado foi curto, mas seu legado cultural é imenso.",
+    "data_criacao": "c. 1332–1323 a.C.",
+    "link": "https://pt.wikipedia.org/wiki/Tutanc%C3%A2mon",
+    "tags": [
+      "faraó",
+      "tumba",
+      "tesouro",
+      "novo império"
+    ]
+  },
+  {
+    "nome": "Pirâmides de Gizé",
+    "descricao": "Complexo de monumentos antigos que inclui as três Grandes Pirâmides (Quéops, Quéfren e Miquerinos) e a Grande Esfinge.",
+    "data_criacao": "c. 2580–2560 a.C.",
+    "link": "https://pt.wikipedia.org/wiki/Necr%C3%B3pole_de_Giz%C3%A9",
+    "tags": [
+      "monumento",
+      "arquitetura",
+      "tumba",
+      "gizé"
+    ]
+  },
+  {
+    "nome": "Cleópatra VII",
+    "descricao": "A última governante ativa do Reino Ptolemaico do Egito. Conhecida por suas alianças com Júlio César e Marco Antônio.",
+    "data_criacao": "69 a.C. – 30 a.C.",
+    "link": "https://pt.wikipedia.org/wiki/Cle%C3%B3patra",
+    "tags": [
+      "faraó",
+      "rainha",
+      "ptolemaico",
+      "roma"
+    ]
+  },
+  {
+    "nome": "Hieróglifos",
+    "descricao": "O sistema de escrita formal usado no Egito Antigo, combinando elementos logográficos, silábicos e alfabéticos.",
+    "data_criacao": "c. 3200 a.C.",
+    "link": "https://pt.wikipedia.org/wiki/Hier%C3%B3glifo_eg%C3%ADpcio",
+    "tags": [
+      "escrita",
+      "linguagem",
+      "símbolos",
+      "cultura"
+    ]
+  },
+  {
+    "nome": "Livro dos Mortos",
+    "descricao": "Uma coleção de textos funerários contendo feitiços e instruções para ajudar os mortos a navegar pelo submundo e alcançar a vida após a morte.",
+    "data_criacao": "c. 1550 a.C.",
+    "link": "https://pt.wikipedia.org/wiki/Livro_dos_Mortos",
+    "tags": [
+      "religião",
+      "feitiços",
+      "submundo",
+      "papiro"
+    ]
+  }
+]

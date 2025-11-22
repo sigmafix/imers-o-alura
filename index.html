@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>𓂀</text></svg>">
+    <link rel="stylesheet" href="arparencia.css">
+    <title>Egito Antigo</title>
+</head>
+<body>
+    <header class="egypt-header">
+        <div class="title-container">
+            <h1><span class="hieroglyph">𓂀</span> Egito Antigo <span class="hieroglyph">𓂀</span></h1>
+            <div id="clock"></div>
+        </div>
+        <div class="controls-container">
+            <button id="music-toggle" class="music-button" aria-label="Ligar ou desligar música de fundo">🔊</button>
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle" aria-label="Alternar tema claro e escuro">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Busque por nome ou descrição...">
+            <button id="searchButton" class="egypt-button">Buscar</button>
+        </div>
+    </header>
+
+    <main class="egypt-main">
+        <div id="loader" class="loader-container">
+            <div class="loader">✒️</div>
+        </div>
+        <article class="egypt-article">
+            <h2>Bem-vindo à Terra dos Faraós</h2>
+            <p>
+                Explore os mistérios e a majestade do Egito Antigo. Use a barra de busca acima para aprender sobre os deuses que moldaram essa civilização fascinante.
+            </p>
+            <p>
+                <strong>Por exemplo:</strong> tente buscar por "Rá", "Anúbis" ou "Ísis".
+            </p>
+        </article>
+        <article id="history-container" class="egypt-article" style="display: none;">
+            <h2>Seu Histórico de Exploração</h2>
+            <ul id="history-list"></ul>
+        </article>
+        <section id="card-container" class="card-container">
+            <!-- Os cards gerados pelo JavaScript aparecerão aqui -->
+        </section>
+    </main>
+
+    <footer class="egypt-footer">
+        <ul class="egypt-footer-links">
+            <li><a href="https://www.todamateria.com.br/deuses-egipcios/" target="_blank" rel="noopener noreferrer">Toda Matéria</a></li>
+            <li><a href="https://br.pinterest.com/willianbaiano/fotos-do-egito/" target="_blank" rel="noopener noreferrer">Fotos do Egito</a></li>
+            <li><a href="https://open.spotify.com/intl-pt/track/0tKfDFFHCiGWHmowjJ3sO6" target="_blank" rel="noopener noreferrer">Músicas - Deuses Egípcios</a></li>
+        </ul>
+    </footer>
+
+    <audio id="background-music" src="musica_egipcia.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

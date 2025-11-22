@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'); /* Importa a fonte 'Quicksand' do Google Fonts para ser usada no site. */
+
+* {
+    box-sizing: border-box; /* Define o modelo de caixa para todos os elementos, fazendo com que padding e border não aumentem a largura final. */
+}
+
+:root {
+    --primary-color: #ffc002; /* Define uma variável de cor para o dourado, usada em destaques. */
+    --secondary-color: #343a40; /* Define uma variável para a cor cinza escuro, usada em textos. */
+    --tertiary-color: #c5a572; /* Define uma variável para a cor de arenito, usada em detalhes. */
+    --bg-color: #f5f5f5; /* Define uma variável para a cor de areia clara, usada em fundos. */
+    --hieroglyph-color: #8d6e63; /* Define uma variável para a cor dos hieróglifos. */
+}
+
+#clock {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    align-self: center;
+}
+
+body {
+    margin: 0; /* Remove a margem padrão do navegador para o corpo da página. */
+    /* Define uma imagem de fundo com tema egípcio para toda a página. */
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/papy.png');
+    /* background-size: cover; */ /* Faz a imagem de fundo cobrir toda a área disponível. */
+    background-position: center; /* Centraliza a imagem de fundo. */
+    background-attachment: fixed; /* Mantém a imagem de fundo fixa durante a rolagem da página. */
+    background-color: #fdf6e3; /* Define uma cor de fundo de fallback, caso a imagem não carregue. */
+    color: var(--secondary-color); /* Define a cor padrão do texto para cinza escuro. */
+    min-height: 100vh; /* Garante que o corpo da página tenha no mínimo a altura total da tela. */
+    display: flex; /* Ativa o layout Flexbox para o corpo da página. */
+    flex-direction: column; /* Organiza os elementos filhos (header, main, footer) em uma coluna. */
+    font-family: "Quicksand", sans-serif; /* Define a família de fontes padrão para todo o site. */
+}
+
+.egypt-header {
+    padding: 2rem 1rem; /* Adiciona espaçamento interno ao cabeçalho (2rem em cima/baixo, 1rem nas laterais). */
+    display: flex; /* Usa Flexbox para alinhar os itens do cabeçalho. */
+    align-items: center; /* Centraliza verticalmente os itens no cabeçalho. */
+    justify-content: space-between; /* Alinha o título à esquerda e os outros itens à direita. */
+    position: sticky; /* Faz o cabeçalho "grudar" no topo da tela ao rolar. */
+    top: 0; /* Define a posição do cabeçalho grudado no topo (0 pixels do topo). */
+    /* Aplica uma imagem de fundo com uma sobreposição de gradiente dourado semitransparente. */
+    background: linear-gradient(rgba(255, 193, 7, 0.85), rgba(255, 193, 7, 0.85)), url('https://i.pinimg.com/originals/3e/25/23/3e25232d51360632d553b1434346d5f4.jpg');
+    background-size: cover; /* Garante que a imagem de fundo do cabeçalho cubra todo o espaço. */
+    background-position: center; /* Centraliza a imagem de fundo do cabeçalho. */
+    z-index: 10; /* Define a ordem de empilhamento, garantindo que o cabeçalho fique sobre outros elementos. */
+    border-bottom: 3px solid var(--secondary-color); /* Adiciona uma borda inferior sólida ao cabeçalho. */
+    gap: 1rem; /* Adiciona um espaço entre os elementos flex (título e busca). */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adiciona uma sombra sutil abaixo do cabeçalho. */
+}
+
+.egypt-header::before, .egypt-header::after {
+    content: ''; /* Conteúdo vazio, necessário para pseudo-elementos ::before e ::after funcionarem. */
+    position: absolute; /* Posiciona os elementos de forma absoluta em relação ao cabeçalho. */
+    width: 100%; /* Define a largura para ocupar 100% do cabeçalho. */
+    left: 0; /* Alinha o início do elemento à esquerda. */
+    right: 0; /* Alinha o fim do elemento à direita. */
+    height: 5px; /* Define a altura das linhas decorativas. */
+    background: linear-gradient(to right, var(--secondary-color), var(--tertiary-color), var(--secondary-color)); /* Cria um gradiente para as linhas. */
+}
+
+.egypt-header::before {
+    top: 0; /* Posiciona a primeira linha decorativa no topo do cabeçalho. */
+}
+
+.egypt-header::after {
+    bottom: -8px; /* Posiciona a segunda linha decorativa um pouco abaixo do cabeçalho. */
+}
+
+.egypt-header h1 {
+    font-size: 2.5rem; /* Define o tamanho da fonte do título principal. */
+    margin: 0; /* Remove qualquer margem padrão do título. */
+    font-weight: 700; /* Define o peso da fonte como negrito. */
+    color: var(--secondary-color); /* Define a cor do texto do título. */
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8); /* Adiciona uma sombra clara ao texto para melhor legibilidade. */
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-container input {
+    padding: 0.375rem 0.75rem; /* Adiciona espaçamento interno ao campo de busca. */
+    border-radius: 1rem; /* Arredonda as bordas do campo de busca. */
+    border: 1px solid var(--tertiary-color); /* Define uma borda sólida com a cor de arenito. */
+    background: var(--bg-color); /* Define a cor de fundo do campo de busca. */
+    font-family: inherit; /* Herda a família de fontes do elemento pai (body). */
+    font-size: 1.5rem; /* Define o tamanho da fonte dentro do campo de busca. */
+    transition: all 0.2s ease; /* Adiciona uma transição suave para todas as propriedades que mudam. */
+    width: 30rem; /* Define a largura do campo de busca. */
+    color: var(--secondary-color); /* Define a cor do texto digitado. */    
+    margin-right: .5rem; /* Adiciona uma margem à direita para separar do botão. */
+}
+
+.search-container input::placeholder {
+    font-size: 1.2rem; /* Define o tamanho da fonte para o texto de placeholder (dica). */
+    font-weight: 300; /* Define o peso da fonte do placeholder como mais leve. */
+    color: var(--tertiary-color); /* Define a cor do texto do placeholder. */
+}
+
+.search-container input:focus {
+    outline: none; /* Remove a borda de foco padrão do navegador. */
+    border-color: var(--primary-color); /* Muda a cor da borda para dourado quando o campo está em foco. */
+    box-shadow: 0 0 0 0.1rem var(--tertiary-color); /* Adiciona uma sombra externa para indicar o foco. */
+}
+
+.egypt-button {
+    padding: 1rem 2rem; /* Adiciona espaçamento interno ao botão. */
+    border-radius: 1rem; /* Arredonda as bordas do botão. */
+    border: none; /* Remove a borda padrão do botão. */
+    cursor: pointer; /* Muda o cursor para uma "mãozinha" ao passar sobre o botão. */
+    font-family: inherit; /* Herda a família de fontes do pai. */
+    font-weight: 500; /* Define o peso da fonte do texto do botão. */
+    font-size: 1rem; /* Define o tamanho da fonte do texto do botão. */
+    white-space: nowrap; /* Impede que o texto do botão quebre em várias linhas. */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Anima a mudança de cor de fundo e do texto. */
+    background-color: var(--secondary-color); /* Define a cor de fundo do botão. */
+    color: var(--primary-color); /* Define a cor do texto do botão. */
+    border: 1px solid var(--secondary-color); /* Adiciona uma borda para consistência visual. */
+}
+
+.egypt-button:hover {
+    background-color: var(--tertiary-color); /* Muda a cor de fundo quando o mouse está sobre o botão. */
+    color: var(--bg-color); /* Muda a cor do texto quando o mouse está sobre o botão. */
+    box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra dourada ao redor do botão no hover. */
+}
+
+/* Adiciona um cursor de pena ao passar sobre elementos interativos */
+.card:hover, .egypt-button:hover, .egypt-article a:hover, .egypt-footer-links a:hover {
+    /* A imagem da pena e as coordenadas de posicionamento do clique */
+    cursor: url('https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Quill.png') 16 16, auto;
+}
+
+.egypt-button:active {
+    transform: scale(0.98); /* Cria um efeito de "pressionar" diminuindo levemente o tamanho do botão ao ser clicado. */
+}
+
+.egypt-main {
+    overflow-y: scroll; /* Adiciona uma barra de rolagem vertical se o conteúdo principal for maior que a área visível. */
+    max-width: 80rem; /* Define a largura máxima para o conteúdo principal, para melhor legibilidade em telas grandes. */
+    margin: 2rem auto; /* Centraliza o conteúdo principal horizontalmente e adiciona margem superior/inferior. */    
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.card {
+    background-color: rgba(253, 245, 230, 0.9); /* Cor de papiro com transparência */
+    /* Adiciona uma textura de papiro real */
+    background-image: url('https://www.transparenttextures.com/patterns/papy.png');
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #d2b48c;
+    border-left: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out; /* Aplica a animação */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.not-found {
+    grid-column: 1 / -1; /* Faz a mensagem ocupar todas as colunas do grid */
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* Define a animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.egypt-article {
+    position: relative; /* Necessário para o posicionamento correto do pseudo-elemento ::before */
+    /* Define um fundo de papiro com uma textura sutil de hieróglifos. */
+    background-color: #fdf5e6; /* Cor base que simula papiro. */
+    /* Adiciona uma textura de papiro real */
+    background-image: url('https://www.transparenttextures.com/patterns/papy.png');
+    border-radius: 8px; /* Arredonda as bordas do artigo. */
+    padding: 1.5rem; /* Adiciona espaçamento interno ao artigo. */
+    margin-bottom: 1.25rem; /* Adiciona espaço abaixo de cada artigo. */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adiciona uma sombra sutil para dar profundidade. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Anima a transformação e a sombra ao interagir. */
+    border: 1px solid #d2b48c; /* Adiciona uma borda fina na cor de areia. */
+    border-left: 5px solid var(--primary-color); /* Adiciona uma borda dourada à esquerda para destaque. */
+}
+
+.egypt-article::before {
+    content: "📜"; /* Adiciona um emoji de pergaminho como elemento decorativo. */
+    position: absolute; /* Posiciona o emoji de forma absoluta. */
+    top: -10px; /* Move o emoji para cima. */
+    left: -15px; /* Move o emoji para a esquerda. */
+    font-size: 1.8rem; /* Define o tamanho do emoji. */
+    transform: rotate(-15deg); /* Rotaciona o emoji. */
+    opacity: 0.7; /* Deixa o emoji levemente transparente. */
+}
+
+
+.egypt-article:hover {
+    transform: translateY(-5px); /* Move o artigo 5 pixels para cima ao passar o mouse. */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Aumenta a sombra para dar um efeito de "flutuar". */
+}
+
+.egypt-article h2 {
+    margin-top: 0; /* Remove a margem superior do título do artigo. */
+    font-weight: 600; /* Define o peso da fonte do título. */
+    font-size: 1.8rem; /* Define o tamanho da fonte do título. */
+    color: var(--secondary-color); /* Define a cor do texto do título. */
+    border-bottom: 2px solid var(--primary-color); /* Adiciona uma linha dourada abaixo do título. */
+    padding-bottom: 0.5rem; /* Adiciona espaço entre o texto do título e a linha. */
+    margin-bottom: 1rem; /* Adiciona espaço abaixo da linha do título. */
+}
+
+.egypt-article p {
+    margin: 0.5rem 0; /* Adiciona margem acima e abaixo de cada parágrafo. */
+    line-height: 1.6; /* Define a altura da linha para melhor legibilidade. */
+    font-size: 1.1rem; /* Define o tamanho da fonte do texto do parágrafo. */
+    color: var(--secondary-color); /* Define a cor do texto do parágrafo. */
+}
+
+.egypt-article p strong {
+    color: var(--tertiary-color); /* Define a cor para textos em negrito (<strong>). */
+    font-weight: 600; /* Define o peso da fonte para textos em negrito. */
+}
+
+.egypt-article a {
+    color: var(--primary-color); /* Define a cor dos links dentro do artigo. */
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+    font-weight: 600; /* Deixa o texto do link em negrito. */
+}
+
+.card a {
+    margin-top: auto; /* Empurra o link 'Saiba mais' para o final do card */
+    align-self: flex-start; /* Alinha o link à esquerda */
+}
+
+.egypt-article a:hover, .card a:hover {
+    text-decoration: underline; /* Adiciona um sublinhado quando o mouse passa sobre o link. */
+}
+
+
+.hieroglyph {
+    font-family: "Segoe UI Symbol", sans-serif; /* Usa uma fonte que contém caracteres parecidos com hieróglifos. */
+    color: var(--hieroglyph-color); /* Define a cor desses caracteres. */
+    font-size: 1.5rem; /* Define o tamanho desses caracteres. */
+    margin: 0 0.5rem; /* Adiciona espaço nas laterais desses caracteres. */
+}
+
+.egypt-footer {
+    width: 100%; /* Faz o rodapé ocupar toda a largura da página. */
+    color: var(--secondary-color); /* Define a cor do texto do rodapé. */
+    background-color: var(--primary-color); /* Define a cor de fundo dourada para o rodapé. */
+    padding: 15px 20px; /* Adiciona espaçamento interno ao rodapé. */
+    margin-top: auto; /* Empurra o rodapé para o final da página (funciona com display:flex no body). */
+    text-align: center; /* Centraliza o texto dentro do rodapé. */
+    border-top: 2px solid var(--secondary-color); /* Adiciona uma borda sólida no topo do rodapé. */
+    font-size: 0.9rem; /* Define o tamanho da fonte do texto do rodapé. */
+}
+
+.egypt-footer-links {
+    list-style: none; /* Remove os marcadores (bolinhas) da lista. */
+    display: flex; /* Usa Flexbox para alinhar os links. */
+    flex-wrap: wrap; /* Permite que os links quebrem para a próxima linha em telas menores. */
+    justify-content: center; /* Centraliza os links horizontalmente. */
+    gap: 20px; /* Adiciona um espaço de 20px entre cada link. */
+    padding: 0; /* Remove o preenchimento padrão da lista. */
+    margin: 0; /* Remove a margem padrão da lista. */
+}
+
+.egypt-footer-links a {
+    color: var(--secondary-color); /* Define a cor dos links no rodapé. */
+    text-decoration: none; /* Remove o sublinhado dos links. */
+    transition: color 0.3s, background-color 0.3s; /* Anima a mudança de cor do texto e do fundo. */
+    font-weight: 600; /* Deixa a fonte mais forte (bold). */
+    padding: 0.5rem 1rem; /* Adiciona espaçamento interno para criar um formato de botão. */
+    border-radius: 20px; /* Arredonda as bordas para um visual de "pílula". */
+    border: 1px solid transparent; /* Adiciona uma borda transparente para evitar que o layout "pule" no hover. */
+}
+
+.egypt-footer-links a:hover {
+    color: #fff; /* Muda a cor do texto para branco. */
+    background-color: var(--secondary-color); /* Adiciona um fundo escuro no hover. */
+    text-decoration: none; /* Garante que não haja sublinhado no hover. */
+}
+
+/* Media Queries para Responsividade: ajusta o layout para diferentes tamanhos de tela. */
+@media (max-width: 768px) {
+    .egypt-header { /* Para telas com largura máxima de 768px (tablets). */
+        flex-direction: column; /* Empilha o título e a busca verticalmente. */
+        padding: 1rem; /* Reduz o espaçamento interno do cabeçalho. */
+    }
+
+    .egypt-header h1 {
+        text-align: center; /* Centraliza o texto do título. */
+        margin-bottom: 1rem; /* Adiciona espaço abaixo do título. */
+    }
+
+    .search-container input {
+        width: 90vw; /* Faz o campo de busca ocupar 90% da largura da tela. */
+        font-size: 1.2rem; /* Reduz o tamanho da fonte no campo de busca. */
+    }
+
+    .egypt-main {
+        padding: 0 1rem; /* Adiciona espaçamento lateral ao conteúdo principal. */
+        height: auto; /* Permite que a altura do conteúdo seja automática. */
+    }
+}
+
+/* Para telas com largura máxima de 480px (celulares). */
+@media (max-width: 480px) {
+    .egypt-header h1 {
+        font-size: 1.5rem; /* Reduz ainda mais o tamanho da fonte do título. */
+    }
+
+    .search-container input, /* Seleciona o campo de busca... */
+    .search-container input::placeholder { /* ...e também o seu placeholder. */
+        font-size: 1rem; /* Reduz o tamanho da fonte para ambos. */
+    }
+
+    .egypt-article h2 {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte dos títulos dos artigos. */
+    }
+
+    .search-container {
+        display: flex; /* Garante o uso de Flexbox. */
+        flex-direction: column; /* Empilha o campo de busca e o botão. */
+        align-items: center; /* Centraliza os itens. */
+        gap: 0.5rem; /* Adiciona um pequeno espaço entre eles. */
+    }
+}
+
+/* --- Estilos do Histórico --- */
+#history-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.history-button {
+    background-color: var(--tertiary-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: url('https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Quill.png') 16 16, auto;
+    transition: background-color 0.2s;
+}
+.history-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Controles de Tema --- */
+.controls-container {
+    display: flex; /* Garante que os controles fiquem em linha */
+    align-items: center;
+    gap: 1rem;
+}
+
+.music-button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    padding: 0;
+    /* Adiciona o cursor de pena personalizado */
+    cursor: url('https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Quill.png') 16 16, auto;
+}
+
+/* Switch do Tema */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--bg-color);
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ccc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: var(--secondary-color);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* --- Estilos do Tema Escuro --- */
+body.dark-mode {
+    /* O segredo revelado: uma textura de hieróglifos dourados sobre o fundo escuro */
+    background-color: #121212;
+    /* Camada 1: Cor dourada sutil. Camada 2: Textura de hieróglifos. */
+    background-image: linear-gradient(rgba(255, 193, 7, 0.05), rgba(255, 193, 7, 0.05)), url('https://www.transparenttextures.com/patterns/hieroglyphs.png');
+    background-blend-mode: normal; /* Remove a mesclagem anterior para garantir a visibilidade. */
+    color: #e0e0e0;
+}
+
+body.dark-mode .egypt-header {
+    background: #1f1f1f;
+    border-bottom-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .egypt-header h1 {
+    color: var(--primary-color);
+    text-shadow: none;
+}
+
+body.dark-mode .search-container input {
+    background: #2c2c2c;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .search-container input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.1rem var(--primary-color);
+}
+
+body.dark-mode .egypt-article {
+    background-color: #1e1e1e;
+    background-image: none;
+    border-color: #333;
+    border-left-color: var(--primary-color);
+    color: #ccc;
+}
+
+body.dark-mode .egypt-article h2,
+body.dark-mode .egypt-article p strong {
+    color: #e0e0e0;
+}
+
+body.dark-mode .card, body.dark-mode .egypt-card {
+    background-color: #1e1e1e;
+    background-image: none; /* Remove a textura no modo escuro */
+    border-color: #333;
+    border-left-color: var(--primary-color);
+    color: #ccc;
+}
+
+body.dark-mode #clock {
+    text-shadow: none;
+    color: var(--primary-color);
+}
+
+body.dark-mode .history-button {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .not-found {
+    color: #e0e0e0;
+}
+
+body.dark-mode .music-button {
+    color: var(--primary-color);
+}
+
+body.dark-mode .egypt-footer {
+    background-color: #1f1f1f;
+    border-top-color: var(--primary-color);
+}
+
+body.dark-mode .egypt-footer-links a {
+    color: #e0e0e0; /* Cor clara para o texto do link no modo escuro. */
+}
+
+body.dark-mode .egypt-footer-links a:hover {
+    color: #1f1f1f; /* Cor do texto escura no hover. */
+    background-color: var(--primary-color); /* Fundo dourado no hover para máximo destaque. */
+}
